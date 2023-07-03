@@ -16,9 +16,7 @@
   },
   "devDependencies": {
     "gh-pages": "^5.0.0",
-    "@babel/plugin-proposal-private-property-in-object": "^1.2.0",
-    "typescript": "3.3.3",
-    "@babel/preset-react": "^7.14.5" 
+    "typescript": "3.3.3"
   },
   "scripts": {
     "start": "react-scripts start",
