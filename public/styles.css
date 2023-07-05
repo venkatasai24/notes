@@ -1,94 +1,199 @@
 * {
-	padding: 0;
-	margin: 0;
-	box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 body {
-	font-family: "Montserrat", sans-serif;
-	background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
-	padding: 0 16px;
+  font-family: "Montserrat", sans-serif;
+  background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
 }
 
 header {
-	background-color: #f5ba13;
-	margin: auto -16px;
-	padding: 16px 32px;
+  background-color: #f5ba13;
+  margin: auto;
+  padding: 16px 32px;
 }
 
 header h1 {
-	font-family: Arial, Helvetica, sans-serif;
-	font-weight: 200;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 200;
 }
 
 footer {
-	position: absolute;
-	text-align: center;
-	bottom: 0;
-	width: 100%;
-	height: 2.5rem;
+  margin: 20px auto;
+  text-align: center;
+  width: 100%;
+  height: 2.5rem;
 }
 
 .note {
-	border-radius: 7px;
-	box-shadow: 0 2px 5px #ccc;
-	padding: 10px;
-	width: 240px;
-	margin: 16px;
-	float: left;
+  border-radius: 7px;
+  box-shadow: 0 2px 5px #ccc;
+  padding: 10px;
+  width: 240px;
+  margin: 16px;
+  float: left;
 }
 
 .note h1 {
-	font-size: 1.1em;
-	margin-bottom: 6px;
+  font-size: 1.1em;
+  margin-bottom: 6px;
 }
 
 .note p {
-	font-size: 1.1em;
-	margin-bottom: 10px;
-	white-space: pre-wrap;
-	word-wrap: break-word;
+  font-size: 1.1em;
+  margin-bottom: 10px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }
 
 .note button {
-	position: relative;
-	float: right;
-	margin-right: 10px;
-	color: #f5ba13;
-	border: none;
-	width: 36px;
-	height: 36px;
-	cursor: pointer;
-	outline: none;
+  position: relative;
+  float: right;
+  margin-right: 10px;
+  color: #f5ba13;
+  border: none;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  outline: none;
 }
 
 form.create-note {
-	position: relative;
-	width: 480px;
-	margin: 30px auto 20px auto;
-	padding: 15px;
-	border-radius: 7px;
+  position: relative;
+  width: 480px;
+  margin: 30px auto 20px auto;
+  padding: 15px;
+  border-radius: 7px;
 }
 
 form.create-note input,
 form.create-note textarea {
-	width: 100%;
-	border: none;
-	padding: 4px;
-	outline: none;
-	font-size: 1.2em;
-	font-family: inherit;
-	resize: none;
+  width: 100%;
+  border: none;
+  padding: 4px;
+  outline: none;
+  font-size: 1.2em;
+  font-family: inherit;
+  resize: none;
 }
+
 form.create-note button {
-	position: absolute;
-	right: 18px;
-	bottom: -18px;
-	background: #f5ba13;
-	border: none;
-	border-radius: 50%;
-	width: 36px;
-	height: 36px;
-	cursor: pointer;
-	outline: none;
+  position: absolute;
+  right: 18px;
+  bottom: -18px;
+  background: #f5ba13;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  outline: none;
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
+
+.loader {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+@media screen and (max-width: 1200px) {
+  .note {
+    width: 350px;
+    margin: 10px 50px;
+  }
+
+  form.create-note {
+    width: 500px; 
+    margin: 16px auto;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .note {
+    width: 300px; 
+    margin: 30px;
+  }
+
+  form.create-note {
+    width: 600px; 
+    margin: 16px auto;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .note {
+    width: 40%; 
+    margin: 30px;
+  }
+
+  form.create-note {
+    width: 500px; 
+    margin: 16px auto;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .note {
+    width: 40%; 
+    margin: 20px;
+  }
+
+  form.create-note {
+    width: 70%; 
+    margin: 16px 15vw;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .note {
+    width: 80%; 
+    margin: 16px 10vw;
+  }
+
+  form.create-note {
+    width: 80%;
+    margin: 16px 10vw;
+  }
+}
+
+@media screen and (max-width: 364px) {
+  .note {
+    width: 90%; 
+    margin: 16px 5vw;
+  }
+
+  form.create-note {
+    width: 90%; 
+    margin: 20px 5vw;
+  }
+
+  form.create-note input,
+  form.create-note textarea {
+    font-size: 16px; 
+  }
 }
