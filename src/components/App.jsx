@@ -74,27 +74,31 @@ function App() {
 
 	function updateNote(e) {
 		e.preventDefault();
-		axios.put(BASE_URL + `/${editId}`, {
-		title: note.title,
-		content: note.content
-		})
-		.then((res) => {
-			if (res.data === "fail") 
-			{
-				alert("Failed to update data");
-			} 
-			else 
-			{
-				setNotes(res.data);
-				setNote({
-					title: "",
-					content: ""
-				});
-				setOpen(false);
-				setChange(false);
-			}
-		})
-		.catch((err) => console.log(err));
+		if(note.title.length && note.content.length)
+		{
+			axios.put(BASE_URL + `/${editId}`, {
+			title: note.title,
+			content: note.content
+			})
+			.then((res) => {
+				if (res.data === "fail") 
+				{
+					alert("Failed to update data");
+				} 
+				else 
+				{
+					setNotes(res.data);
+					setNote({
+						title: "",
+						content: ""
+					});
+					setOpen(false);
+					setChange(false);
+				}
+			})
+			.catch((err) => console.log(err));
+		}
+		else{window.alert("Fill all entries...")}
 	}
 
 	function editNote(e) {
