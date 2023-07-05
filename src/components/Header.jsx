@@ -23,7 +23,7 @@ function Header() {
 		>
 			<h1 style={{ color: theme ? "black" : "white" }}>
 				<div style={{ display: "flex", justifyContent: "space-between" }}>
-					<div>Keeper</div>
+					<div>Notes</div>
 					<div>
 						<Fab size="small"
 							onMouseEnter={()=>setBg("#f7c742")}
