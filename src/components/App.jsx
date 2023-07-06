@@ -145,14 +145,12 @@ function App() {
       <div id={theme}>
         <Header />
         {loading ? (
-          <div className="loading-container">
-            <div
-              className="loader"
-              style={{
-                border: !theme ? "8px solid #f3f3f3" : "8px solid #333333",
-                borderTop: "8px solid #f5ba13",
-              }}
-            ></div>
+          <div class="spinner-box">
+            <div class="pulse-container">
+              <div class="pulse-bubble pulse-bubble-1"></div>
+              <div class="pulse-bubble pulse-bubble-2"></div>
+              <div class="pulse-bubble pulse-bubble-3"></div>
+            </div>
           </div>
         ) : (
           <form
